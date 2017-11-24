@@ -18,7 +18,7 @@
 			<link rel="stylesheet" href="css/style-xlarge.css" />
 		</noscript>
 	</head>
-	<body id="top">
+	<body>
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
@@ -32,7 +32,7 @@
 					</ul>
 				</nav>
 			</header>
-
+		
 		<!-- Banner -->
 			<section id="banner">
 				<div class="inner">
@@ -60,22 +60,19 @@
 				VALUES ('$username', '".md5($password)."', '$email', '$trn_date')";
 				$result = mysqli_query($con,$query);
 				if($result)
-				{
-					echo "
-					<div id='stack2' class='modal hide fade' tabindex='-1' data-focus-on='input:first'>
-						<div class='modal-header'>
-							<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>×</button>
-							<h3>Registration successfully</h3>
-						</div>
-						<div class='modal-body'>
-							<p>Now you can login.</p>
-							<button class='btn' data-toggle='modal' href='index.php'>Home</button>
-						</div>
-						<div class='modal-footer'>
-							<button type='button' data-dismiss='modal' class='btn'>Close</button>
-							<button type='button' class='btn btn-primary'>Ok</button>
-						</div>
-					</div>";
+				{	
+					echo '<div class="modalsucces">';
+					echo '	<div class="modal-contentsucces">';
+					echo '		<div class="modal-headersucces">';
+					echo '			<h2>Registration successfully!</h2>';
+					echo '		</div>';
+					echo '		<div class="modal-bodySucces">';
+					echo '			<p><center>Now you can <a href="index.php">login.</center></p>';
+					echo '		</div>';
+					echo '		<div class="modal-footersucces"></div>';
+					echo '	</div>';
+					echo '</div>';
+					
 				}
 			}else
 			{
@@ -97,46 +94,12 @@
 
 						<div class="clearfix">
 							<button type="buttonModalSignup" onclick="document.getElementById('id02').style.display='none'" class="cancelbtnModalSignup">Cancel</button>
-							<button type="submit" data-toggle="modal" class="signupbtnModalSignup" name="submit" value="Register" href="#stack2">Sign Up</button>
+							<button type="submit" class="signupbtnModalSignup" name="submit" value="Register">Sign Up</button>
 						</div>
 					</div>
 				</form>
 			</div>
 		<?php } ?>
-		
-		<!-- The Modal -->
-		<div id="myModalRegister" class="modalRegister">
-
-		  <!-- Modal content -->
-		  <div class="modal-contentRegister">
-			<div class="modal-headerRegister">
-			  <span class="closeRegister">&times;</span>
-			  <h2>Modal Header</h2>
-			</div>
-			<div class="modal-bodyRegister">
-			  <p>Some text in the Modal Body</p>
-			  <p>Some other text...</p>
-			</div>
-			<div class="modal-footerRegister">
-			  <h3>Modal Footer</h3>
-			</div>
-		  </div>
-
-		</div>
-		<!-- The Modal Register
-		<div id="myModalRegister" class="modalRegister">
-
-			<!-- Modal content 
-			<div class="modal-contentRegister">
-				<div class="modal-headerRegister">
-					<span class="closeRegister">&times;</span>
-					<h2>Registration successfully</h2>
-				</div>
-				<div class="modal-bodyRegister">
-					<p>Now you can login.</p>
-				</div>
-			</div>
-		</div>-->
 
 		<!-- Modal Login form 
 			<div id ="id01" class="modal">
